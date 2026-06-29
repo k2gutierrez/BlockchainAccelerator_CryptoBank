@@ -5,24 +5,24 @@
 
 ## 📖 About the Project
 
-[cite_start]The **CryptoBank Application** is a robust Web3 Smart Contract project built entirely with **Solidity `0.8.30`** [cite: 5] [cite_start]and thoroughly tested using the **Foundry** framework[cite: 23]. [cite_start]At its core, the project provides a highly secure, decentralized vault for users to deposit and withdraw native Ether[cite: 5].
+The **CryptoBank Application** is a robust Web3 Smart Contract project built entirely with **Solidity `0.8.30`** and thoroughly tested using the **Foundry** framework. At its core, the project provides a highly secure, decentralized vault for users to deposit and withdraw native Ether.
 
-This architecture is ideal for demonstrating foundational DeFi principles, smart contract security patterns, and strict state management. [cite_start]It implements custom errors for extreme gas efficiency [cite: 5, 6] [cite_start]and utilizes a dual-role access control system separating administrative duties from ownership rights[cite: 6, 11].
+This architecture is ideal for demonstrating foundational DeFi principles, smart contract security patterns, and strict state management. It implements custom errors for extreme gas efficiency and utilizes a dual-role access control system separating administrative duties from ownership rights.
 
 **Key Technical Highlights:**
-* [cite_start]**Solidity `0.8.30`:** Leveraging up-to-date compiler features for gas optimization and built-in overflow/underflow protection[cite: 5].
-* [cite_start]**Gas-Optimized Custom Errors:** Discarding standard string reverts in favor of custom errors (e.g., `CryptoBank__NotEnoughEther()`) to significantly reduce deployment and runtime gas costs[cite: 5, 6].
-* **Foundry Framework:** Complete with high-speed testing (`CryptoBankTest`), state assertions, cheatcode integration (`vm.prank`, `vm.expectRevert`), and deployment scripting (`CryptoBankScript`)[cite: 2, 24, 29, 34].
+* **Solidity `0.8.30`:** Leveraging up-to-date compiler features for gas optimization and built-in overflow/underflow protection.
+* [**Gas-Optimized Custom Errors:** Discarding standard string reverts in favor of custom errors (e.g., `CryptoBank__NotEnoughEther()`) to significantly reduce deployment and runtime gas costs.
+* **Foundry Framework:** Complete with high-speed testing (`CryptoBankTest`), state assertions, cheatcode integration (`vm.prank`, `vm.expectRevert`), and deployment scripting (`CryptoBankScript`).
 
 ---
 
 ## ⚙️ How It Works
 
-The `CryptoBank` contract allows an unlimited number of users to interact with the vault[cite: 5]. When a user deposits Ether, their balance is tracked internally in a mapping (`s_userBalance`)[cite: 7, 13]. To protect the protocol, there is a hard cap on the maximum balance any single user can hold (`s_maxBalance`)[cite: 7, 12].
+The `CryptoBank` contract allows an unlimited number of users to interact with the vault. When a user deposits Ether, their balance is tracked internally in a mapping (`s_userBalance`). To protect the protocol, there is a hard cap on the maximum balance any single user can hold (`s_maxBalance`).
 
 The contract utilizes a strict separation of privileges:
-* [cite_start]**The Owner:** Set immutably at deployment, the owner holds the exclusive right to assign or change the Admin[cite: 6, 11, 16].
-* [cite_start]**The Admin:** Responsible for protocol parameters, the admin can modify the global maximum balance (but strictly cannot lower it below the current threshold) and can read any user's balance[cite: 15, 18].
+* **The Owner:** Set immutably at deployment, the owner holds the exclusive right to assign or change the Admin.
+* **The Admin:** Responsible for protocol parameters, the admin can modify the global maximum balance (but strictly cannot lower it below the current threshold) and can read any user's balance.
 
 ### Architecture Diagram
 
