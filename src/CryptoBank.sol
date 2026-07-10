@@ -14,6 +14,11 @@ pragma solidity 0.8.30;
     // UserB -> Deposit(2 ether)
     // Bank Balance = 7 ether
 
+/**
+ * @title CryptoBank
+ * @author Carlos Gutiérrez
+ * @notice Crypto bank application
+ */
 contract CryptoBank {
 
     // Custom Errors
