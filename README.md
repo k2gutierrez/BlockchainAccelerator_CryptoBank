@@ -11,7 +11,7 @@ This architecture is ideal for demonstrating foundational DeFi principles, smart
 
 **Key Technical Highlights:**
 * **Solidity `0.8.30`:** Leveraging up-to-date compiler features for gas optimization and built-in overflow/underflow protection.
-* [**Gas-Optimized Custom Errors:** Discarding standard string reverts in favor of custom errors (e.g., `CryptoBank__NotEnoughEther()`) to significantly reduce deployment and runtime gas costs.
+* **Gas-Optimized Custom Errors:** Discarding standard string reverts in favor of custom errors (e.g., `CryptoBank__NotEnoughEther()`) to significantly reduce deployment and runtime gas costs.
 * **Foundry Framework:** Complete with high-speed testing (`CryptoBankTest`), state assertions, cheatcode integration (`vm.prank`, `vm.expectRevert`), and deployment scripting (`CryptoBankScript`).
 
 ---
